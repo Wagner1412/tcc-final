@@ -3,12 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class="container">
-  <div class="row">
-    <div class="col-md-6 col-lg-4">Conteúdo</div>
-    <div class="col-md-6 col-lg-4">Conteúdo</div>
-  </div>
-</div>
 <title>Flash House Music</title>
 
 <!-- Google Fonts -->
@@ -17,16 +11,17 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- CSS EXTERNO -->
-<link rel="stylesheet" href="wagner.css">
-
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
 body { background: url('imagens/logo.png') no-repeat center center fixed; background-size: cover; color:#fff; line-height:1.6; scroll-behavior: smooth; }
 
+/* CSS EXTERNO */
+ <link rel="stylesheet" href="wagner.css">
+</head>
+<body>
 /* NAVBAR */
 header { position: fixed; top:0; width:100%; background: rgba(0,0,0,0.7); z-index: 999; padding:15px 0; }
-header nav { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+header nav { display:flex; justify-content:center; gap:30px; }
 header nav [data-tab] { background:none; border:none; color:#fff; font-weight:600; cursor:pointer; font-size:1rem; transition:0.3s; text-decoration:none; }
 header nav [data-tab]:hover { color:#ff6600; }
 
@@ -46,18 +41,18 @@ header nav [data-tab]:hover { color:#ff6600; }
 }
 .section.active { opacity:1; pointer-events:auto; position:relative; }
 
-/* HERO */
-.hero-content { text-align:center; margin-top:60px; }
+/* HERO / INÍCIO */
+.hero-content { text-align:center; }
 .hero-content img.perfil-foto { width:150px; height:150px; border-radius:50%; margin-bottom:20px; border:3px solid #ff6600; }
-.hero-content h1 { font-size:2.5rem; margin-bottom:10px; color:#ff6600; }
-.hero-content p { font-size:1.1rem; }
+.hero-content h1 { font-size:2.5rem; margin-bottom:10px; color:#007bff; }
+.hero-content p { font-size:1.2rem; margin-bottom:15px; }
 
 /* BOTÕES */
 .btn { display:inline-block; padding:10px 20px; background:#ff6600; color:#fff; text-decoration:none; font-weight:600; border-radius:5px; transition:all 0.3s ease; }
 .btn:hover { background:#e65c00; transform:scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
 
 /* CARDS MÚSICAS */
-.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; margin-top:30px; }
+.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; }
 .card { background: rgba(0,0,0,0.6); border-radius:10px; overflow:hidden; text-align:center; cursor:pointer; padding-bottom:10px; opacity:0; transform:translateY(20px); transition:transform 0.3s ease, box-shadow 0.3s ease; }
 .card.visible { opacity:1; animation: fadeZoom 0.8s ease forwards; }
 .card img { width:100%; height:200px; object-fit:cover; transition:transform 0.3s ease; }
@@ -65,9 +60,9 @@ header nav [data-tab]:hover { color:#ff6600; }
 .card:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 15px 25px rgba(0,0,0,0.5); }
 .card:hover h3 { color:#ff6600; }
 .card:hover img { transform:scale(1.1); }
-@keyframes fadeZoom {0% {opacity:0; transform:scale(0.8) translateY(30px);} 100% {opacity:1; transform:scale(1) translateY(0);}}
+@keyframes fadeZoom {0% {opacity:0; transform:scale(0.8) translateY(30px);} 60% {opacity:1; transform:scale(1.05) translateY(0);} 100% {opacity:1; transform:scale(1) translateY(0);}}
 
-/* PLAYER */
+/* PLAYER PROFISSIONAL COM VISUALIZADOR */
 .player-card {
   display: flex;
   flex-direction: column;
@@ -75,7 +70,7 @@ header nav [data-tab]:hover { color:#ff6600; }
   gap: 15px;
   background: rgba(0,0,0,0.75);
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0,0,0,0.7);
 }
@@ -101,11 +96,10 @@ header nav [data-tab]:hover { color:#ff6600; }
 .bar:nth-child(5) { animation-delay:0.4s; }
 @keyframes bounce { 0% {height:10px;} 50% {height:40px;} 100% {height:10px;} }
 
-/* CONTATO */
+/* CONTATO CENTRALIZADO */
 #contato { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; margin-top:50px; }
 
-/* RODAPÉ */
-footer { background: rgba(0,0,0,0.8); text-align:center; padding:15px 10px; position:relative; bottom:0; width:100%; color:#ffcc00; }
+
 
 /* RESPONSIVO */
 @media screen and (max-width:768px){
@@ -115,16 +109,16 @@ footer { background: rgba(0,0,0,0.8); text-align:center; padding:15px 10px; posi
 }
 </style>
 </head>
-
 <body>
 
+<!-- NAVBAR -->
 <header>
   <nav>
     <button data-tab="inicio">Início</button>
     <button data-tab="sobre">Sobre</button>
     <button data-tab="musicas">Músicas</button>
     <button data-tab="contato">Contato</button>
-    <button data-tab="agradecimentos">Agradecimentos</button>
+<button data-tab="agradecimentos">Agradecimentos</button>
   </nav>
 </header>
 
@@ -133,46 +127,53 @@ footer { background: rgba(0,0,0,0.8); text-align:center; padding:15px 10px; posi
   <div class="hero-content">
     <img src="imagens/me.jpg" alt="Minha Foto" class="perfil-foto">
     <h1>Wagner Carlos Leite</h1>
-<br>
     <p>Endereço: Rua Antonio Maria Bessa, 424</p>
-<br>
     <p>Cidade Lider - São Paulo - SP - Zona Leste</p>
-<br>
-    <p>CEP: 08280-460</p>
-<br>
+    <p>CEP: 08280-4609</p>
     <p>Programador de Sistema Junior c# Back-end</p>
-<br>
     <p>Programador Web Junior html/css/java Front-end</p>
-<br>
     <p>Programador Full Stack</p>
-<br>
     <p>Bem-vindo ao meu espaço musical! 🎧</p>
-<br>
     <p>Este é meu estilo de musica preferido! 🎧 </p>
-<br>
     <p>Email: wcle72@gmail.com | WhatsApp: +55 11 94774-3374</p>
-<br>
     <a class="btn" data-tab="musicas">Ouça Agora</a>
-<br>
-          <!-- QR CODE -->
-    <div class="qrcode" style="margin-top:30px;">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=Wagner+Carlos+Leite+-+Programador+Full+Stack&size=200x200" alt="QR Code Contato">
+<br><br><br><br>
+
+ <!-- QR CODE -->
+    <div class="qrcode">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=Wagner+Carlos+Leite+-+Programador+Full+Stack+-+Rua+Antonio+Maria+Bessa+424+-+Cidade+Lider+SP+-+Email:+wcle72@gmail.com+-+WhatsApp:+5511947743374&size=200x200" alt="QR Code Contato">
       <p>📱 Escaneie para salvar meus contatos</p>
-    </div>
   </div>
-</section>
+<br><br><br><br><br><br>
+<footer>
+  <div class="footer-content">
+  &copy;  2025 - Desenvolvido e Criado por Wagner Carlos Leite.
+  </div>
+</footer>
+
+  </section>
+
 
 <!-- SOBRE -->
 <section id="sobre" class="section">
   <h2>Sobre Flash House</h2>
+<br>
   <p>Bem-vindo ao Flash House! Aqui você encontra as melhores músicas eletrônicas do estilo House, mixadas para uma experiência intensa de som e energia, foi uma precursora da música eletrônica que conhecemos hoje. Suas batidas dançantes, uso de sintetizadores e vocais cativantes influenciaram diretamente os gêneros eletrônicos que surgiram posteriormente, como a house music e a dance music, é um gênero de música eletrônica de dança caracterizado por uma batida repetitiva de quatro no chão e um ritmo típico de 115 a 130 batidas por minuto,Para podermos entender como surgiu este fenômeno musical, temos que voltar alguns muitos anos atrás, na década de 70. Isso mesmo, as raízes da Dance Music estão na Disco Music ou "Discoteca" e no famoso som da Philadelphia. De início, podemos dizer que se trata realmente de um fenômeno, pois surgiu nos Estados Unidos, sem nenhum apoio de rádios, atravessou o Atlântico, foi parar na Inglaterra onde explodiu, mais uma vez sem nenhum apoio da mídia, e conquistou as paradas de sucesso de toda a Europa. Começando do começo. O termo House está relacionado à um antigo clube chamado "The Warehouse", localizado em Chicago (o berço do House). Neste clube, havia um DJ chamado Frankie Knuckles, que mixava velhos clássicos da Disco Music (então vivendo um período de decadência) com novidades do recém-criado Synthpop, originário da Europa. Ele jogava tudo junto, de Kraftwerk à Donna Summer, passando por Telex, Depeche Mode, New Order, OMD e etc... Mas ele não mixava, apenas. Ele dava uma nova dimensão às músicas com arranjos diferentes e batidas mais aceleradas. Na verdade, Frankie era (é) mais do que um DJ. Era um verdadeiro arquiteto de som, que inovou completamente a arte de mixagem. Hoje, ex-frequentadores assíduos do Warehouse afirmam com convicção que a espinha dorsal da atual cena dance estava nos velhos clássicos "Philly" (de Philadelphia) como as músicas de Harold Melvin, Billy Paul, The O'Jays, mixados junto com Disco hits e Synthpop europeu. Vale lembrar também que, nesta época, entrava em cena uma novidade tecnológica até então desconhecida no mundo pop: a bateria eletrônica, o principal instrumento da House music. A virada dos anos 70/80, é muito subestimada pelos críticos musicais, mas temos que observar alguns fatos. A evolução tecnológica deixava os laboratórios para aterrisar em nossas casas. E alguns aparelhos de última geração faziam a alegria do consumismo capitalista: videocassete "betamax", stereo system com duplo deck, vídeogames Odissey e Atari, carros cada vez mais modernos, Walkmans gigantescos, computadores XT e por aí vai. E a evolução surgia por todos os lados, não podendo passar despercebida pelo mundo da música. Nesse contexto, vejamos a pequena companhia fabricante de instrumentos musicais Roland. o lançamento de duas máquinas conhecidas como TB-303 e TR-606 mudariam a música como conhecida. A primeira era uma máquina geradora de linhas de baixo (basslines) e a segunda era uma bateria eletrônica, ainda rudimentar. Aqui, podemos destacar uma mudança filosófica fundamental da virada 70/80: aquela velha concepção de união e fraternidade típicas das pistas de dança setentistas (como mostrado no filme "Embalos de Sábado a Noite"), era solenemente abandonada, dando lugar ao "faça você mesmo", ou seja só eu, e eu e meu umbigo. Assim, aquele guitarrista que tinha horror em trabalhar com outras pessoas, poderia ter um baixista e um baterista fazendo exatamente o que o artista mandasse. Nada de conflitos éticos e morais. A bateria eletrônica da Roland vinha também para suprir uma carência básica da nova música que se anunciava: é espantoso mas é fato que muitos bateristas se recusavam a tocar compassos repetidos milhares de vezes. Sendo assim, uma música só de batidas 4/4 era veementemente recusada pelos egocêntricos bateristas (que só perdem em ego para os guitarristas). Sendo assim, a Roland lançava a solução para muitos (e desemprego para outros tantos), pois disponibilizava uma máquina que não tinha frescura em tocar este ou aquele estilo musical. Mas dois fenômenos puderam ser observados: 1º) A bateria TR-606 era de certa forma "artificial" demais para um músico mais purista, o que fez com que o aparelho relativamente fracassasse em vendagens. O que impulsionou um pouco a venda do TR foi mesmo o TB-303, que tinha um dispositivo de vínculo (uma espécie de MIDI rudimentar) com a bateria eletrônica, o que trazia uma grande facilidade para o músico que trabalhava com sequenciadores. 2º) Pode parecer ridículo, mas essas maravilhas da tecnologia estavam muito a frente de seu tempo, e não foram muito utilizadas na época de seu lançamento, visto que a música tinha regras pré-definidas, e instrumentação eletrônica não fazia parte deste cardápio. A Roland, que não era boba nem nada, decidiu investir nessa área, e lançava máquina atrás de máquina. Sintetizadores para todos os gostos (e, principalmente, bolsos), e as drum machines evoluiam cada vez mais. Esta evolução culminaria no lançamento da bateria TR-909 (a máquina fundamental do House) e o sintetizador D-50, outra obra-prima que pode ser ouvida em quase todas as primeiras gravações House. O maquinário já estava quase pronto. Só faltava uma coisinha: o padrão de interligação de instrumentos musicais "MIDI". Lançado em 1983, agora era possível ligar um monte de sintetizadores e drum machines juntos e sincronizados. Sem dúvida uma revolução que será levada ao seu limite, com o surgimento da Dance Music eletrônica. Voltando ao Warehouse, podemos também destacar a figura de um cara que era "cadeira cativa" no lugar. Um jovem e misterioso rapaz cujo estilo lembrava muito o histórico George Clinton e que atendia pelo modesto nome de "Professor Funk". Ele baixava na pista de dança no início do baile e só saia quando Frankie acabava de mixar o último vinil. Também cantava estranhas melodias (hoje conhecidas como Acid House) como "Work your Body" e "Visions", vestido como um rei inglês da idade média. Era um homem de visão e sabia que aquele som, mais tarde, iria dar origem a um produto completamente diferente do atual. O Techno. Agora, um pouquinho de filosofia. Na metade dos anos 70, a Disco Music ainda era um fenômeno "underground". Neste cenário, pecado e salvação foram mixados juntos criando um som mais ou menos decadente e devocional, como uma reza, um lamento. Era um tipo de Disco diferente do padrão, e que foi amplamente explorado por selos de Disco Music, principalmente de Nova York. Basicamente, era um estilo que pegava a sonoridade da Philadelphia e misturava tudo com vocais "Gospel" de cantoras como Loleatta Holloway (as "Disco Divas" que, mais tarde, seriam "House Divas"). Neste momento, podemos verificar as influências usadas pelos primeiros House hits. Para Frankie Knuckles, o House não é um produto da Black Music, mas uma completa re-invenção da Dance Music do passado. O House era um liquidificador que misturava pista de dança e igreja, jogando tudo nos clubes, absolutamente sem nenhuma propriedade religiosa. Na verdade, a religião sempre esteve ligada às raízes do House. A maioria dos DJ's de Chicago admitem uma "dívida" para com os anos 70 e, particularmente, o original "Disco mixer" Walter Gibbons, um DJ que tornou populares as técnicas básicas de mixagens e foi pioneiro ao traçar o caminho do "Duplo Deck" para a produção de estúdio. Estranhamente, durante o apogeu da era Disco, o cara largou tudo e se converteu novamente ao Cristianismo, voltando à vida religiosa. Isso criou uma lacuna que foi preenchida por outros "DJ's Produtores" como Arthur Baker, François Kervokian e Farley "Jackmaster" Funk. Todos já encaravam Walter como uma lenda da Disco Music. Então, o cara resurgiu em 1984, justamente na "hora do parto" da música House e, claro, causou um tremendo impacto. Ele lançou um "12 polegadas" independente chamado "Set it Off", que criou um frisson no "Paradise Garage" um reduto gay em Nova York, onde Larry LeVan era o DJ residente. Em algumas semanas, a música ganhou outras versões e inúmeros remixes. Tecnicamente falando, "Set it Off" soava como um house primitivo, contando com batidas repetitivas (característica do gênero), ideais para mixagens. Rapidamente, a música se tornou um hino underground, encontrando seu habitat natural em Chicago, onde DJ's como Farley "Jackmaster" e Frankie Knuckles detonavam nas pistas de dança e, regularmente, nas estações de rádio. O termo Jackin' tornou-se popular entre os novos "clubbers" e pode ser traduzido como dançar e absorver a música como um todo, tornando-se 1 só.</p>
-</section>
+<br><br><br><br><br><br><br><br><br>
+  <footer>
+  <div class="footer-content">
+  &copy;  2025 - Desenvolvido e Criado por Wagner Carlos Leite.
+  </div>
+</footer>
+
+  </section>
+
 
 <!-- MÚSICAS -->
 <section id="musicas" class="section">
   <h2>Músicas em Destaque</h2>
   <div class="cards">
-         <div class="card" data-src="musicas/musica1.mp3"><img src="imagens/capa1.png"><h3>Flash House 1</h3></div>
+     <div class="card" data-src="musicas/musica1.mp3"><img src="imagens/capa1.png"><h3>Flash House 1</h3></div>
     <div class="card" data-src="musicas/musica2.mp3"><img src="imagens/capa2.jpeg"><h3>Flash House 2</h3></div>
     <div class="card" data-src="musicas/musica3.mp3"><img src="imagens/capa3.jpeg"><h3>Flash House 3</h3></div>
     <div class="card" data-src="musicas/musica4.mp3"><img src="imagens/capa4.jpeg"><h3>Flash House 4</h3></div>
@@ -189,6 +190,7 @@ footer { background: rgba(0,0,0,0.8); text-align:center; padding:15px 10px; posi
     <div class="card" data-src="musicas/musica15.mp3"><img src="imagens/capa15.jpeg"><h3>Flash House 15</h3></div>
   </div>
 
+  <!-- PLAYER ABAIXO DAS MUSICAS -->
   <div class="player-card">
     <img id="track-cover" src="imagens/capa1.png" alt="Capa">
     <div class="player-card-controls">
@@ -199,10 +201,20 @@ footer { background: rgba(0,0,0,0.8); text-align:center; padding:15px 10px; posi
     <span id="track-name">Nenhuma música selecionada</span>
     <span id="time">0:00 / 0:00</span>
     <div class="visualizer">
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
     <audio id="audio" src=""></audio>
   </div>
+<br><br><br><br><br><br>
+<footer>
+  <div class="footer-content">
+  &copy;  2025 - Desenvolvido e Criado por Wagner Carlos Leite.
+  </div>
+</footer>
 </section>
 
 <!-- CONTATO -->
@@ -211,17 +223,28 @@ footer { background: rgba(0,0,0,0.8); text-align:center; padding:15px 10px; posi
 <br>
   <p>Email: <strong>wcle72@gmail.com</strong></p>
 <br>
+<p>Email: <strong>wcle2013@gmail.com</strong></p>
+<br>
   <p>WhatsApp: <strong>+55 11 94774-3374</strong></p>
 <br>
   <a href="mailto:wcle72@gmail.com" class="btn">Enviar E-mail</a>
 <br>
   <a href="https://wa.me/5511947743374" class="btn" target="_blank">WhatsApp</a>
-<br>
+  <br><br><br><br><br><br>
+<footer>
+  <div class="footer-content">
+  &copy;  2025 - Desenvolvido e Criado por Wagner Carlos Leite.
+  </div>
+</footer>
 </section>
 
+<br><br><br><br>
 <!-- AGRADECIMENTOS -->
 <section id="agradecimentos" class="section">
-  <h2>🙏 <em><b>Agradecimentos</em></b></h2>
+<br>
+  <section id="agradecimentos">
+<div>
+    <h2>🙏 <em><b>Agradecimentos</em></b></h2>
   <p>
 <em><b>
 Gostaria de expressar minha profunda gratidão ao Professor Alexandre, pelo seu incrível trabalho no curso de Desenvolvedor Web. Sua dedicação, paciência e domínio do conteúdo foram fundamentais para que eu pudesse evoluir e desenvolver minhas habilidades em programação e criação de sites.
@@ -260,48 +283,48 @@ Obrigado por compartilhar seu conhecimento de forma inspiradora e motivadora, se
                                             Um agradecimento especial a você, visitante, por prestigiar este projeto e compartilhar o amor pela música.
 </em></b>
 </p>
-</section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+  </section>
 
-<footer>
-  &copy; 2025 - Desenvolvido e Criado por Wagner Carlos Leite.
-</footer>
 
 <script>
-// Abas
-const tabs = document.querySelectorAll('[data-tab]');
+// ABAS
+const tabButtons = document.querySelectorAll('[data-tab]');
 const sections = document.querySelectorAll('.section');
-tabs.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const id = btn.dataset.tab;
-    sections.forEach(sec=>sec.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', ()=>{
+    const tab = btn.dataset.tab;
+    sections.forEach(sec => sec.classList.remove('active'));
+    const section = document.getElementById(tab);
+    section.classList.add('active');
+    section.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// Cards
+// CARDS animação
 const cards = document.querySelectorAll('.card');
-function showCards(){
-  cards.forEach(card=>{
-    if(card.getBoundingClientRect().top < window.innerHeight*0.9){
-      card.classList.add('visible');
-    }
+function mostrarCards() {
+  cards.forEach(card => {
+    const pos = card.getBoundingClientRect().top;
+    const altura = window.innerHeight * 0.85;
+    if(pos < altura) card.classList.add('visible');
   });
 }
-window.addEventListener('scroll', showCards);
-window.addEventListener('load', showCards);
+window.addEventListener('scroll', mostrarCards);
+window.addEventListener('load', mostrarCards);
 
-// Player
-const audio=document.getElementById('audio');
-const trackName=document.getElementById('track-name');
-const trackCover=document.getElementById('track-cover');
-const timeDisplay=document.getElementById('time');
-const playBtn=document.getElementById('play');
-const prevBtn=document.getElementById('prev');
-const nextBtn=document.getElementById('next');
+// PLAYER
+const audio = document.getElementById('audio');
+const trackName = document.getElementById('track-name');
+const trackCover = document.getElementById('track-cover');
+const timeDisplay = document.getElementById('time');
+const playBtn = document.getElementById('play');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
 
-const playlist=[
-  {src:'musicas/musica1.mp3', img:'imagens/capa1.png', name:'Got 2 Be (Another Mix) / Plus Staples'},
+const playlist = [
+{src:'musicas/musica1.mp3', img:'imagens/capa1.png', name:'Got 2 Be (Another Mix) / Plus Staples'},
   {src:'musicas/musica2.mp3', img:'imagens/capa2.jpeg', name:'The Hitman (Extended Mix) / Ab Logic'},
   {src:'musicas/musica3.mp3', img:'imagens/capa3.jpeg', name:'B2 - Get Out Of My Case '},
   {src:'musicas/musica4.mp3', img:'imagens/capa4.jpeg', name:'House Energy Revenge'},
@@ -317,37 +340,46 @@ const playlist=[
   {src:'musicas/musica14.mp3', img:'imagens/capa14.jpeg', name:'Música 14'},
   {src:'musicas/musica15.mp3', img:'imagens/capa15.jpeg', name:'Música 15'}
 ];
-let currentTrack=0;
-
-cards.forEach((card,index)=>{
-  card.addEventListener('click',()=>{
+let currentTrack = 0;
+document.querySelectorAll('.card').forEach((card,index)=>{
+  card.addEventListener('click', ()=>{
     currentTrack=index; playTrack();
   });
 });
-
 function playTrack(){
-  const t=playlist[currentTrack];
-  audio.src=t.src; trackCover.src=t.img; trackName.textContent=t.name;
-  audio.play(); playBtn.innerHTML='<i class="fas fa-pause"></i>';
+  const track = playlist[currentTrack];
+  audio.src = track.src; trackCover.src = track.img;
+  trackName.textContent = track.name; audio.play();
+  playBtn.innerHTML='<i class="fas fa-pause"></i>';
 }
-
-playBtn.addEventListener('click',()=>{
-  if(audio.paused){audio.play(); playBtn.innerHTML='<i class="fas fa-pause"></i>';}
-  else{audio.pause(); playBtn.innerHTML='<i class="fas fa-play"></i>';}
+playBtn.addEventListener('click', ()=>{
+  if(audio.paused){ audio.play(); playBtn.innerHTML='<i class="fas fa-pause"></i>'; }
+  else{ audio.pause(); playBtn.innerHTML='<i class="fas fa-play"></i>'; }
 });
-
-prevBtn.addEventListener('click',()=>{
-  currentTrack=(currentTrack-1+playlist.length)%playlist.length; playTrack();
+prevBtn.addEventListener('click', ()=>{
+  currentTrack = (currentTrack-1+playlist.length)%playlist.length; playTrack();
 });
-nextBtn.addEventListener('click',()=>{
-  currentTrack=(currentTrack+1)%playlist.length; playTrack();
+nextBtn.addEventListener('click', ()=>{
+  currentTrack = (currentTrack+1)%playlist.length; playTrack();
 });
-
-audio.addEventListener('timeupdate',()=>{
-  const c=Math.floor(audio.currentTime);
-  const d=Math.floor(audio.duration)||0;
-  timeDisplay.textContent=`${Math.floor(c/60)}:${String(c%60).padStart(2,'0')} / ${Math.floor(d/60)}:${String(d%60).padStart(2,'0')}`;
+audio.addEventListener('ended', ()=>{
+  currentTrack = (currentTrack+1)%playlist.length; playTrack();
 });
+audio.addEventListener('timeupdate', ()=>{
+  const current = Math.floor(audio.currentTime);
+  const duration = Math.floor(audio.duration)||0;
+  timeDisplay.textContent = formatTime(current)+' / '+formatTime(duration);
+});
+function formatTime(seconds){
+  const min=Math.floor(seconds/60); const sec=seconds%60;
+  return `${min}:${sec<10?'0'+sec:sec}`;
+}
 </script>
+<footer>
+  <div class="footer-content">
+  &copy;  2025 - Desenvolvido e Criado por Wagner Carlos Leite.
+  </div>
+</footer>
+
 </body>
 </html>

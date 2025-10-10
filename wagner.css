@@ -19,13 +19,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 80px;
+  padding-bottom: 80px; /* evita sobreposição do footer */
 }
 
 img, video {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* ======= CONTAINER ======= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* ======= CABEÇALHO ======= */
@@ -44,6 +51,11 @@ header {
   transition: background 0.3s ease;
 }
 
+header.scrolled {
+  background-color: rgba(0,0,0,0.95);
+}
+
+/* ======= MENU ======= */
 nav {
   display: flex;
   gap: 25px;
@@ -78,15 +90,15 @@ section.active {
   transform: translateY(0);
 }
 
-/* ======= HOME ======= */
+/* ======= HERO (PARALLAX) ======= */
 #home {
   background: url('https://i.ibb.co/2gLqhhJ/flashhouse.jpg') no-repeat center/cover;
   background-attachment: fixed;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: white;
   text-shadow: 2px 2px 10px black;
   padding: 0 15px;
 }
@@ -173,6 +185,17 @@ section.active {
   color: #ff6600;
   transform: scale(1.2);
   text-shadow: 0 0 10px #ff6600;
+}
+
+/* ======= PLAYER ANIMAÇÃO ======= */
+.playing #play i {
+  color: #ff6600;
+  animation: pulsePlay 1s infinite alternate;
+}
+
+@keyframes pulsePlay {
+  0% { text-shadow: 0 0 5px #ff6600; }
+  100% { text-shadow: 0 0 15px #ff6600; }
 }
 
 /* ======= CONTATO ======= */
@@ -267,6 +290,25 @@ footer {
   box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
 }
 
+/* ======= CARDS DE MÚSICAS ======= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
 /* ======= RESPONSIVIDADE ======= */
 @media (max-width: 992px) {
   #home h1 { font-size: 2.5rem; }
@@ -274,13 +316,14 @@ footer {
 }
 
 @media (max-width: 768px) {
-  nav { gap: 15px; flex-direction: column; }
+  nav { gap: 15px; }
   .player-card { width: 90%; }
   section { padding: 80px 15px; }
   #agradecimentos p { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
+  nav { flex-direction: column; gap: 10px; }
   #home h1 { font-size: 2rem; }
   #home p { font-size: 1rem; }
   footer { font-size: 0.8rem; padding: 10px; }

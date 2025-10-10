@@ -28,6 +28,22 @@ header nav ul {
 @media (max-width: 768px) { /* celulares grandes */ }
 @media (max-width: 576px) { /* celulares pequenos */ }
 
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #000000, #1a1a1a, #2c2c2c);

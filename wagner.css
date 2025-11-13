@@ -310,19 +310,19 @@ footer {
 }
 
 /* ======= RESPONSIVIDADE ======= */
-@media (max-width: 992px) {
+@media (min-width: 344px) and (max-width: 768px) {
   #home h1 { font-size: 2.5rem; }
   #home p { font-size: 1.1rem; }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 344px) and (max-width: 768px) {
   nav { gap: 15px; }
   .player-card { width: 90%; }
   section { padding: 80px 15px; }
   #agradecimentos p { font-size: 1rem; }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 344px) and (max-width: 768px) {
   nav { flex-direction: column; gap: 10px; }
   #home h1 { font-size: 2rem; }
   #home p { font-size: 1rem; }

@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flash House Music</title>
+<!DOCTYPE html><!-- /* Informa ao navegador que este arquivo é um documento HTML5 */ -->
+<html lang="pt-BR"><!-- /* Define o idioma principal da página como português do Brasil */ -->
+<head><!-- /* Início da área de configurações da página (não aparece para o usuário) */ -->
+<meta charset="UTF-8"><!-- /* Define o padrão de caracteres como UTF-8 (suporta acentos e emojis) */ -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- /* Define o padrão de caracteres como UTF-8 (suporta acentos e emojis) */ -->
+<title>Flash House Music</title><!-- /* Título que aparece na aba do navegador */ -->
+
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+/* CSS EXTERNO */
+ <link rel="stylesheet" href="wagner.css">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
 body { background: url('imagens/logo.png') no-repeat center center fixed; background-size: cover; color:#fff; line-height:1.6; scroll-behavior: smooth; }
 
-/* CSS EXTERNO */
- <link rel="stylesheet" href="wagner.css">
+
 </head>
 <body>
 /* NAVBAR */
-header { position: fixed; top:0; width:100%; background: rgba(0,0,0,0.7); z-index: 999; padding:15px 0; }
+header { position: fixed; top:0; width:100%; background: rgba(0,0,0,0.7); z-index: 999; padding:15px 0; }/* Cabeçalho fixo no topo */
 header nav { display:flex; justify-content:center; gap:30px; }
 header nav [data-tab] { background:none; border:none; color:#fff; font-weight:600; cursor:pointer; font-size:1rem; transition:0.3s; text-decoration:none; }
 header nav [data-tab]:hover { color:#ff6600; }
@@ -62,7 +63,7 @@ header nav [data-tab]:hover { color:#ff6600; }
 .card:hover img { transform:scale(1.1); }
 @keyframes fadeZoom {0% {opacity:0; transform:scale(0.8) translateY(30px);} 60% {opacity:1; transform:scale(1.05) translateY(0);} 100% {opacity:1; transform:scale(1) translateY(0);}}
 
-/* PLAYER PROFISSIONAL COM VISUALIZADOR */
+/* PLAYER COM VISUALIZADOR */
 .player-card {
   display: flex;
   flex-direction: column;
